@@ -10,7 +10,7 @@ export const ProfileCard = (props: iProfile) => {
       <Image
         src={photo}
         alt={username}
-        className="h-[200px]"
+        className="h-[200px] rounded-t-[15px]"
         height={1000}
         width={400}
       />
