@@ -3,9 +3,8 @@ export interface iProfile {
   email: string;
   photo: string;
   username: string;
-  role: string;
+  role: "Frontend Developer" | "Backend Developer" | "Fullstack Developer";
 }
-
 export const data: iProfile[] = [];
 
 const RandomNames = [
@@ -276,24 +275,26 @@ const RandomNames = [
   "carter",
   "emma",
   "charles",
+  "parv",
 ];
 
-for (let i = 0; i <= RandomNames.length; i++) {
+// logic
+for (let i = 1; i <= RandomNames.length; i++) {
   if (RandomNames[i]) {
     const profile: iProfile = {
       name: RandomNames[i],
       role:
         i % 3 === 0
-          ? "Bakend Developer"
+          ? "Backend Developer"
           : i % 2 === 0
           ? "Frontend Developer"
-          : "Full Stack Developer",
-      email: `${RandomNames[i].toLocaleLowerCase()}@gmail.com`,
+          : "Fullstack Developer",
+      email: `${RandomNames[i].toLowerCase()}@example.com`,
       username: `user${RandomNames[i].toLowerCase()}_username`,
       photo: `https://source.unsplash.com/random/200x200?sig=${i}`,
     };
     data.push(profile);
   } else {
-    console.log("Please Wait....");
+    console.error("Please wait...");
   }
 }

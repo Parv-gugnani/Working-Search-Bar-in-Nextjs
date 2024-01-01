@@ -1,4 +1,5 @@
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import Router from "next/router";
 import { useState, ChangeEvent } from "react";
 
 interface iDefault {
